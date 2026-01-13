@@ -53,6 +53,8 @@ Demo Access:-
 Email: aaa@gmail.com
 Password: password
 
+Deployment:- Render
+
 Summary:-
 This project demonstrates authentication, REST APIs, CRUD operations, and frontend-backend integration using a clean and minimal Kanban-based design.
 Some Pic Of Website:-
