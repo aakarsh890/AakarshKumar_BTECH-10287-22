@@ -1,0 +1,58 @@
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  padding: 15px;
+}
+
+.column {
+  border: 1px solid #ddd;
+  padding: 10px;
+  min-height: 200px;
+}
+
+.column:hover {
+  background: #f9f9f9;
+}
+
+
+.task {
+  border: 1px solid #ccc;
+  padding: 8px;
+  margin-bottom: 8px;
+  background: #fafafa;
+}
+
+.task-card {
+  border: 1px solid #ccc;
+  background: #fff;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-box {
+  background: white;
+  padding: 20px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+
+
+/* Mobile */
+@media (max-width: 768px) {
+  .board {
+    grid-template-columns: 1fr;
+  }
+}
