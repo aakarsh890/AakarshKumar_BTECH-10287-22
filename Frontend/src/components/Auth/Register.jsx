@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { registerUser } from "../../api/auth";
 import "../../css/auth.css";
 import oziGif from "../../assets/ozi-gif.gif";
@@ -26,7 +26,7 @@ const Register = () => {
 
     try {
       await registerUser(form);
-      navigate("/login"); 
+      navigate("/login", { replace: true });
     } catch (err) {
       setError(err.response?.data?.message || "Signup failed");
     }
@@ -34,46 +34,48 @@ const Register = () => {
 
   return (
     <div className="auth-page">
-    <div className="auth-box">
-      <img src={oziGif} alt="logo" className="login-gif" />
-      <h3>Sign Up</h3>
+      <div className="auth-box">
+        <img src={oziGif} alt="logo" className="login-gif" />
+        <h3>Sign Up</h3>
 
-      {error && <p className="error">{error}</p>}
+        {error && <p className="error">{error}</p>}
 
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          name="name"
-          placeholder="Name"
-          value={form.name}
-          onChange={handleChange}
-          required
-        />
+        <form onSubmit={handleSubmit}>
+          <input
+            type="text"
+            name="name"
+            placeholder="Name"
+            value={form.name}
+            onChange={handleChange}
+            required
+          />
 
-        <input
-          type="email"
-          name="email"
-          placeholder="Email"
-          value={form.email}
-          onChange={handleChange}
-          required
-        />
+          <input
+            type="email"
+            name="email"
+            placeholder="Email"
+            value={form.email}
+            onChange={handleChange}
+            required
+          />
 
-        <input
-          type="password"
-          name="password"
-          placeholder="Password"
-          value={form.password}
-          onChange={handleChange}
-          required
-        />
+          <input
+            type="password"
+            name="password"
+            placeholder="Password"
+            value={form.password}
+            onChange={handleChange}
+            required
+          />
 
-        <button type="submit">Register</button>
-      </form>
-      <p>
-        Have an account? <a href="/login">Log In</a>
-      </p>
-    </div>
+          <button type="submit">Register</button>
+        </form>
+
+        <p>
+          Have an account?{" "}
+          <Link to="/login">Log In</Link>
+        </p>
+      </div>
     </div>
   );
 };
