@@ -42,8 +42,9 @@ const App = () => {
 
         <Route
           path="/profile"
-          element={isAuth ? <Profile /> : <Navigate to="/login" />}
+          element={isAuth ? <Profile setIsAuth={setIsAuth} /> : <Navigate to="/login" />}
         />
+
 
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>

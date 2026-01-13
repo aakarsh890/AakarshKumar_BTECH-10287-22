@@ -1,8 +1,11 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { updateUser, deleteUser } from "../api/user.js";
 import "../css/auth.css";
 
-const Profile = () => {
+const Profile = ({ setIsAuth }) => {
+  const navigate = useNavigate();
+
   const [form, setForm] = useState({
     name: "",
     email: ""
@@ -39,8 +42,10 @@ const Profile = () => {
 
     try {
       await deleteUser();
+
       localStorage.removeItem("token");
-      window.location.href = "/login";
+      setIsAuth(false);          
+      navigate("/login", { replace: true }); 
     } catch (err) {
       setError("Failed to delete account");
     }

@@ -21,7 +21,7 @@ const Login = ({ setIsAuth }) => {
       const data = await loginUser(form);
       localStorage.setItem("token", data.token);
 
-      setIsAuth(true);        // 🔥 THIS triggers re-render
+      setIsAuth(true);        
       navigate("/", { replace: true });
     } catch (err) {
       setError(err.response?.data?.message || "Login failed");
