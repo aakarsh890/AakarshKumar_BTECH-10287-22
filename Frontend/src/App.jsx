@@ -1,9 +1,9 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 
-import Login from "./components/auth/Login";
-import Logout from "./components/auth/Logout";
+import Login from "./components/Auth/Login";
+import Logout from "./components/Auth/Logout";
 import Header from "./components/header/Header";
-import Register from "./components/auth/Register";
+import Register from "./components/Auth/Register";
 
 
 import Home from "./pages/Home";
