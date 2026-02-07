@@ -3,6 +3,17 @@
   font-family: "Inter", "Segoe UI", sans-serif;
 }
 
+.login-gif {
+  width: 25%;          /* responsive size */
+  max-width: 80px;    /* prevents being too large on big screens */
+  min-width: 70px;     /* prevents being too small on mobile */
+  height: auto;        /* keeps aspect ratio */
+  border-radius: 50%;  /* makes it round */
+  object-fit: cover;   /* ensures image fills the circle */
+  display: block;
+  margin: 0 auto 16px; /* centers image */
+}
+
 
 .auth-page {
   min-height: 100vh;
