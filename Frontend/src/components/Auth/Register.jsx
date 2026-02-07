@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { registerUser } from "../../api/auth";
 import "../../css/auth.css";
-import oziGif from "../../assets/ozi-gif.gif";
+import Gif from "../../assets/ezgif.com-optimize.gif";
 
 const Register = () => {
   const navigate = useNavigate();
@@ -35,7 +35,7 @@ const Register = () => {
   return (
     <div className="auth-page">
       <div className="auth-box">
-        <img src={oziGif} alt="logo" className="login-gif" />
+        <img src={Gif} alt="logo" className="login-gif" />
         <h3>Sign Up</h3>
 
         {error && <p className="error">{error}</p>}
